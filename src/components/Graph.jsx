@@ -3,7 +3,7 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts"
 
 function Graph  ({combinedData})  {
 
-  console.log(combinedData)
+  // combinedData is an array of objects -> each line is generated based on the corresponding dataKey value and displayed on the graph accordingly 
     return(
       <div id="graph-container">
         <LineChart width={800} height={400} data={combinedData} >
