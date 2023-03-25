@@ -7,8 +7,10 @@ const getData = require("./routes/getData")
 
 
 // api route to handle requests to water external water data from front-end
-app.get('/api', getData, (req,res)=> {
-  res.json('Hello World from api route')
+app.use('https://api/', getData, (req,res)=> {
+  const data = res.locals.data
+  console.log('data in server.js: ', data)
+  res.json(data)
 })
 
 // global error handler

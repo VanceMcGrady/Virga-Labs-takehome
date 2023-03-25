@@ -20,11 +20,14 @@ const [LakeMeadStorageVolume, setLakeMeadStorageVolume] = useState([])
 useEffect(()=>{
 
     //Lake Powell Storage Volume
-    //  fetch('https://www.usbr.gov/uc/water/hydrodata/reservoir_data/919/json/17.json')
-    //  .then((response)=> response.json())
-    //  .then((data)=> {
-    //   setLakePowellStorageVolume(data)
-    //  })
+     fetch('/api')
+     .then((response)=> {
+      console.log('response: ', response)
+      return response.json()})
+     .then((data)=> {
+      console.log(data)
+      setLakePowellStorageVolume(data)
+     })
 
      // Lake Powell Realease Volume
     //  fetch('https://www.usbr.gov/uc/water/hydrodata/reservoir_data/919/json/17.json')
