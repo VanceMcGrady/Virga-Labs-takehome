@@ -20,25 +20,25 @@ const [LakeMeadStorageVolume, setLakeMeadStorageVolume] = useState([])
 useEffect(()=>{
 
     //Lake Powell Storage Volume
-     fetch('https://www.usbr.gov/uc/water/hydrodata/reservoir_data/919/json/17.json')
-     .then((response)=> response.json())
-     .then((data)=> {
-      setLakePowellStorageVolume(data)
-     })
+    //  fetch('https://www.usbr.gov/uc/water/hydrodata/reservoir_data/919/json/17.json')
+    //  .then((response)=> response.json())
+    //  .then((data)=> {
+    //   setLakePowellStorageVolume(data)
+    //  })
 
      // Lake Powell Realease Volume
-     fetch('https://www.usbr.gov/uc/water/hydrodata/reservoir_data/919/json/17.json')
-     .then((response)=> response.json())
-     .then((data)=> {
-      setLakePowellReleaseVolume(data)
-     })
+    //  fetch('https://www.usbr.gov/uc/water/hydrodata/reservoir_data/919/json/17.json')
+    //  .then((response)=> response.json())
+    //  .then((data)=> {
+    //   setLakePowellReleaseVolume(data)
+    //  })
 
      // Lake Mead Storage Volume
-     fetch('https://www.usbr.gov/uc/water/hydrodata/reservoir_data/919/json/17.json')
-     .then((response)=> response.json())
-     .then((data)=> {
-      setLakeMeadStorageVolume(data)
-     })
+    //  fetch('https://www.usbr.gov/uc/water/hydrodata/reservoir_data/919/json/17.json')
+    //  .then((response)=> response.json())
+    //  .then((data)=> {
+    //   setLakeMeadStorageVolume(data)
+    //  })
 
 
 }, [])
