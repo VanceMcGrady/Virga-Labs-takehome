@@ -20,10 +20,8 @@ const [LakeMeadStorageVolume, setLakeMeadStorageVolume] = useState([])
 useEffect(()=>{
 
     //Lake Powell Storage Volume
-     fetch('http://localhost:1234/api')
-     .then((response)=> {
-      console.log('response: ', response)
-      return response.json()})
+     fetch('http://localhost:1234/api/lake-powell-storage')
+     .then((response)=> response.json())
      .then((data)=> {
       console.log(data)
       setLakePowellStorageVolume(data)
