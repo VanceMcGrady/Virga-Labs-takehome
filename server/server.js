@@ -1,12 +1,20 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 1234
+
+const getData = require("./routes/getData")
 
 
-app.use(express.static('public'))
 
-app.get('/', (req, res) => {
- res.send('hello world')
+// api route to handle requests to water external water data from front-end
+app.get('/api', getData, (req,res)=> {
+  res.json('Hello World from api route')
+})
+
+// global error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
 })
 
 app.listen(port, () => {
