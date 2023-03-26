@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Graph from "./components/Graph";
-
+import React from "react";
 
 function App() {
 

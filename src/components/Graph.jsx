@@ -1,5 +1,7 @@
 
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
+import React from "react";
+
 
 function Graph  ({combinedData})  {
 
