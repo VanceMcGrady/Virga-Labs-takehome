@@ -9,7 +9,6 @@ app.use(cors({origin: 'http://localhost:3000', credentials: true}))
 // api route to handle requests to water external water data from front-end
 app.use('/api/lake-powell-storage', getData, (req,res)=> {
   const data = res.locals.data
-  console.log('data in server.js: ', data)
   res.json(data)
 })
 

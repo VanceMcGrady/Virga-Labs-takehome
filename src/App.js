@@ -9,7 +9,7 @@ function App() {
 // the data from the three provided data sets will be processed according to 'user input' and converted into a single data set according to the users input
 // this single dataset (rainfallData) will then be passed down to the graph component in a shape that can be processed by recharts
 const [rainfallData, setRainfallData] = useState([])
-const [LakePowellStorageVolume, setLakePowellStorageVolume] = useState()
+const [LakePowellStorageVolume, setLakePowellStorageVolume] = useState([])
 const [LakePowellReleaseVolume, setLakePowellReleaseVolume] = useState()
 const [LakeMeadStorageVolume, setLakeMeadStorageVolume] = useState([])
 
@@ -18,13 +18,12 @@ const [LakeMeadStorageVolume, setLakeMeadStorageVolume] = useState([])
 // I'm having cors issues with the provided URLs so no data is actually being returned, but this useEffect hook is intended to fetch the data from the URLs
 // and assign the corresponding state value to that dataSet
 useEffect(()=>{
-
     //Lake Powell Storage Volume
      fetch('http://localhost:1234/api/lake-powell-storage')
      .then((response)=> response.json())
      .then((data)=> {
-      console.log(data)
-      setLakePowellStorageVolume(data)
+      //console.log(data.data)
+      setLakePowellStorageVolume(data.data)
      })
 
      // Lake Powell Realease Volume
@@ -37,10 +36,9 @@ useEffect(()=>{
      // Lake Mead Storage Volume
     //  fetch('https://www.usbr.gov/uc/water/hydrodata/reservoir_data/919/json/17.json')
     //  .then((response)=> response.json())
-    //  .then((data)=> {
+    //  .then((data)=> {  `
     //   setLakeMeadStorageVolume(data)
     //  })
-
 
 }, [])
 // parse through the data and produce a new array which will be compatible with recharts
@@ -82,7 +80,7 @@ for (let i = 0; i < mockLakePowellStorage.length; i++){
     }
   )
 }
-
+console.log('Lake Powell Storage Volume: ', LakePowellStorageVolume)
   return (
     <div className="App" >
       <h1>Water Data Visualization</h1>
