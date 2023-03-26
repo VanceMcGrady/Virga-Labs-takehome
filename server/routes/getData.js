@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const fetch = import('node-fetch')
+const axios = require('axios')
 
 
 router.get('/', async (req, res, next)=> {
   console.log('get working in getData.js')
 
-  res.locals.data = {rainfall: 3}
+  const response = await axios.get('https://www.usbr.gov/uc/water/hydrodata/reservoir_data/919/json/17.json')
+  res.locals.data = response.data
   next()
 })
 
