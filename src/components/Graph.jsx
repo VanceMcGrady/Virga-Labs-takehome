@@ -3,13 +3,13 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts"
 import React from "react";
 
 
-function Graph  ({combinedData})  {
-
+function Graph  (combinedData)  {
+  //console.log('Lake Powell Storage Volume: ', combinedData)
   // combinedData is an array of objects -> each line is generated based on the corresponding dataKey value and displayed on the graph accordingly 
     return(
       <div id="graph-container">
         <LineChart width={800} height={400} data={combinedData} >
-          <Line type="monotone" dataKey="LakePowellReleaseWater" stroke="red" />
+          <Line type="monotone" dataKey="rainfall" stroke="red" />
           <Line type="monotone" dataKey="LakePowellStorageWater" stroke="green" />
           <Line type="monotone" dataKey="LakeMeadStorageWater" stroke="blue"  />
           <CartesianGrid stroke="#ccc" strokeDasharray="5 5"/>

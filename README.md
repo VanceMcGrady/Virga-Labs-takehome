@@ -5,7 +5,10 @@ I chose to use React and recharts in order to spin up a visualization quickly in
 You should be able to run this application in your browser by cloning this repo and then (assuming you have npm installed) running: 
 
 npm i 
+
 npm start
+
+** if you happen to be looking at a later version of this you will also need to cd into the server directory and run npm i and npm start to install the server dependencies and start the server. Making the fetch reqest from the server instead of the browser (along with the installed 'cors' dependancy for express) solves the cors error and the application now successfully fethes the data **
 
 https://legacy.reactjs.org/docs/getting-started.html
 https://recharts.org/en-US/
